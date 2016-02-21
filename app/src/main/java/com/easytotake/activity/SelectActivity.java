@@ -14,12 +14,6 @@ public class SelectActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
-
-        if (isLoggedIn()) {
-            Intent nextIntent = new Intent(SelectActivity.this, MainActivity.class);
-            SelectActivity.this.startActivity(nextIntent);
-            this.finish();
-        }
     }
 
     @OnClick(R.id.btn_login)
@@ -32,10 +26,5 @@ public class SelectActivity extends BaseActivity {
     void onSingUpClick() {
         Intent nextIntent = new Intent(SelectActivity.this, SingUpActivity.class);
         SelectActivity.this.startActivity(nextIntent);
-    }
-
-
-    private boolean isLoggedIn() {
-        return true;
     }
 }
