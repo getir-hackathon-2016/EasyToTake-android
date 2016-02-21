@@ -208,7 +208,7 @@ public class MainActivity extends BaseDrawerActivity implements OnMapReadyCallba
 
     private void getMarkers() {
 
-        if (mClusterManager==null){
+        if (mClusterManager == null) {
             return;
         }
 

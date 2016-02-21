@@ -1,6 +1,5 @@
 package com.easytotake.components.view;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Rect;

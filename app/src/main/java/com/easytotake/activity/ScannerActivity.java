@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.easytotake.BaseActivity;
 import com.easytotake.R;
 import com.easytotake.components.view.QrCodeScannerView;
 import com.google.zxing.Result;

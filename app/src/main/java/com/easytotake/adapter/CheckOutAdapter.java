@@ -77,13 +77,18 @@ public class CheckOutAdapter extends RecyclerView.Adapter {
 
     private void loadData() {
 
+
         Call<List<Product>> call = RestClient.getService().shoppingCard("1");
 
         call.enqueue(new AbstractCallback<List<Product>>() {
             @Override
             public void onSuccess(Response<List<Product>> response) {
 
+
                 removeLoading();
+
+                products.clear();
+                notifyDataSetChanged();
 
                 if (response.body() != null) {
                     for (Product product : response.body()) {
@@ -142,8 +147,6 @@ public class CheckOutAdapter extends RecyclerView.Adapter {
                         products.remove(adapterPosition);
                         notifyItemRangeRemoved(adapterPosition, 1);
 
-
-                        products.clear();
                         loadMore();
                     }
                 });
