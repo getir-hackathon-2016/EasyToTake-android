@@ -1,2 +1,2 @@
-# kapgelco-android
-Android UI For KapGelCo Application
+# EasyToTake-android
+Android UI For EasyToTake Application
