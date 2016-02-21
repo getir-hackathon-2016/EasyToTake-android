@@ -22,4 +22,5 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
     compile 'com.wang.avi:library:1.0.2'
+    compile 'me.dm7.barcodescanner:zxing:1.8.4'
 }

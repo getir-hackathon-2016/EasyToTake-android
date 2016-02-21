@@ -223,6 +223,7 @@ public class ProductAdapter extends RecyclerView.Adapter implements RecyclerView
             super(view);
             ButterKnife.bind(this, view);
             view.setOnClickListener(this);
+            picture.setOnClickListener(this);
         }
 
         public void bindView(Product product, Context context) {

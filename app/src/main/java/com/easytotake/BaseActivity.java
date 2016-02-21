@@ -107,33 +107,56 @@ public class BaseActivity extends AppCompatActivity {
 
     public void updateBasket(Product product, String type) {
         if (type != null) {
+
+            product.setParentOid("1");
+
             if (type.equals("add")) {
                 PreferencesManager.getInstance(getApplicationContext()).increment();
                 // increment
+                Call<BasketModel> call = RestClient.getService().updateShoppingCard(product);
+                call.enqueue(new AbstractCallback<BasketModel>() {
+                    @Override
+                    public void onSuccess(Response<BasketModel> response) {
+                        // TODO when success check again basket count size
+                        BasketModel basketModel = response.body();
+                        if (basketModel.isSuccess()) {
+                        } else {
+                            // TODO handle exception
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        // TODO handle exception
+                        System.out.println(t.getMessage());
+                    }
+                });
             } else if (type.equals("remove")) {
                 // decrement
                 PreferencesManager.getInstance(getApplicationContext()).decremenet();
+
+                Call<BasketModel> call = RestClient.getService().removeShoppingCard(product);
+                call.enqueue(new AbstractCallback<BasketModel>() {
+                    @Override
+                    public void onSuccess(Response<BasketModel> response) {
+                        // TODO when success check again basket count size
+                        BasketModel basketModel = response.body();
+                        if (basketModel.isSuccess()) {
+                        } else {
+                            // TODO handle exception
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        // TODO handle exception
+                        System.out.println(t.getMessage());
+                    }
+                });
             }
             product.setParentOid("1");
 
-            Call<BasketModel> call = RestClient.getService().updateShoppingCard(product);
-            call.enqueue(new AbstractCallback<BasketModel>() {
-                @Override
-                public void onSuccess(Response<BasketModel> response) {
-                    // TODO when success check again basket count size
-                    BasketModel basketModel = response.body();
-                    if (basketModel.isSuccess()) {
-                    } else {
-                        // TODO handle exception
-                    }
-                }
 
-                @Override
-                public void onFailure(Throwable t) {
-                    // TODO handle exception
-                    System.out.println(t.getMessage());
-                }
-            });
         }
         supportInvalidateOptionsMenu();
     }

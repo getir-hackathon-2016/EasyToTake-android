@@ -14,6 +14,7 @@ public class Messenger implements ClusterItem, Serializable {
     private String name;
     private String picture;
     private String distance;
+    private String status;
 
     public Messenger() {
 
@@ -22,6 +23,14 @@ public class Messenger implements ClusterItem, Serializable {
     public Messenger(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getDistance() {

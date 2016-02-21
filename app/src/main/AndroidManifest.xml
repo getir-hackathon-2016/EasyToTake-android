@@ -9,6 +9,10 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:name=".EasyToTakeApplication"
         android:icon="@mipmap/ic_launcher"
@@ -40,6 +44,14 @@
             android:name="com.easytotake.activity.MapActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.TransparentActivity.FullScreen" />
+        <activity
+            android:name="com.easytotake.activity.ScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity
+            android:name="com.easytotake.activity.ScannerViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.FullScreen" />
 
         <activity
             android:name="com.easytotake.activity.CheckOutActivity"

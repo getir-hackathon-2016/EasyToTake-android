@@ -32,7 +32,6 @@ public class EasyToTakeApplication extends Application {
             @Override
             public void onFailure(Throwable t) {
                 // TODO ignore
-                System.out.println(t.getMessage());
             }
         });
     }

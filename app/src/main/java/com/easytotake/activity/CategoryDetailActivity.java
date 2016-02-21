@@ -15,6 +15,7 @@ import com.easytotake.listener.RecyclerViewLongClickListener;
 import com.easytotake.rest.model.Product;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 public class CategoryDetailActivity extends BaseDrawerActivity implements RecyclerViewLongClickListener {
 
@@ -27,6 +28,12 @@ public class CategoryDetailActivity extends BaseDrawerActivity implements Recycl
         intent.putExtra(ARG_PARENT_OID, parentOid);
         startingActivity.startActivity(intent);
     }
+
+    @OnClick(R.id.btnReadQuarCode)
+    void onbtnReadQuarCode() {
+        ScannerViewActivity.startScannerActivity(this);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,8 @@ public class CategoryDetailActivity extends BaseDrawerActivity implements Recycl
         adapter.loadMore();
 
         rvCategories.setAdapter(adapter);
+
+        Snackbar.make(rvCategories, "Long click for direct add to shopping cart", Snackbar.LENGTH_LONG).show();
     }
 
     @Override

@@ -8,6 +8,12 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.easytotake.R;
+import com.easytotake.anim.RoundedTransformation;
+import com.easytotake.map.LatLngInterpolator;
+import com.easytotake.map.MarkerAnimation;
+import com.easytotake.map.PicassoMarker;
+import com.easytotake.rest.util.Constants;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,12 +22,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.easytotake.R;
-import com.easytotake.anim.RoundedTransformation;
-import com.easytotake.map.LatLngInterpolator;
-import com.easytotake.map.MarkerAnimation;
-import com.easytotake.map.PicassoMarker;
-import com.easytotake.rest.util.Constants;
 import com.squareup.picasso.Picasso;
 
 public class MapActivity extends BaseDrawerActivity implements OnMapReadyCallback, LocationListener {
@@ -73,15 +73,14 @@ public class MapActivity extends BaseDrawerActivity implements OnMapReadyCallbac
 
         latLng = getIntent().getParcelableExtra(ARG_LATLNG);
 
-
-        MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Kaptım Geliyorum!");
+        MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("i am coming..!");
 
         marker = googleMap.addMarker(markerOptions);
 
         PicassoMarker picassoMarker = new PicassoMarker(marker);
 
         Picasso.with(this)
-                .load(Constants.Rest.BASE_URL + "co.png")
+                .load(Constants.Rest.BASE_URL + "busy.png")
                 .placeholder(R.drawable.img_circle_placeholder)
                 .resize(64, 64)
                 .centerCrop()

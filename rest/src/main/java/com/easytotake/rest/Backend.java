@@ -37,6 +37,17 @@ public interface Backend {
     @POST(Constants.Rest.UPDATE_SHOPPING_CARD)
     Call<BasketModel> updateShoppingCard(@Body Product product);
 
+    @POST(Constants.Rest.REMOVE_FROM_SHOPPING_CARD)
+    Call<BasketModel> removeShoppingCard(@Body Product product);
+
     @GET(Constants.Rest.GET_SHOPPING_CARD_COUNT)
     Call<BasketModel> getShoppingCardCount(@Query("userOid") String userOid);
+
+    @GET(Constants.Rest.CHECK_OUT)
+    Call<BasketModel> checkOut(@Query("userOid") String userOid);
+
+
+    // TODO get by Categories
+    @GET(Constants.Rest.PRODUCTS)
+    Call<Product> findOneProduct(@Query("oid") String oid);
 }

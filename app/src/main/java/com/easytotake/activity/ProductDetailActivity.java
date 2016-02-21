@@ -107,6 +107,7 @@ public class ProductDetailActivity extends BaseDrawerActivity implements RevealB
                 return true;
             }
         });
+
     }
 
     private void setupViewPager(ViewPager viewPager) {

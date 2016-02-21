@@ -12,9 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.easytotake.R;
-import com.easytotake.activity.ProductDetailActivity;
 import com.easytotake.anim.RoundedTransformation;
-import com.easytotake.listener.RecyclerViewClickListener;
+import com.easytotake.listener.RecyclerViewLongClickListener;
 import com.easytotake.rest.AbstractCallback;
 import com.easytotake.rest.RestClient;
 import com.easytotake.rest.model.Product;
@@ -30,21 +29,21 @@ import butterknife.ButterKnife;
 import retrofit.Call;
 import retrofit.Response;
 
-public class CheckOutAdapter extends RecyclerView.Adapter implements RecyclerViewClickListener {
+public class CheckOutAdapter extends RecyclerView.Adapter {
     private static final int VIEW_ITEM = 1;
     private static final int VIEW_PROGRESS = 0;
 
     private static final int TAKE = 5;
-    private static RecyclerViewClickListener itemListener;
+    private static RecyclerViewLongClickListener itemListener;
     private RecyclerView recyclerView;
 
     private List<Product> products = new ArrayList<>();
 
     private Context context = null;
 
-    public CheckOutAdapter(RecyclerView recyclerView, Context context) {
+    public CheckOutAdapter(RecyclerView recyclerView, Context context, RecyclerViewLongClickListener listener) {
         this.context = context;
-        itemListener = this;
+        this.itemListener = listener;
 
         final GridLayoutManager linearLayoutManager = (GridLayoutManager) recyclerView.getLayoutManager();
 
@@ -102,6 +101,7 @@ public class CheckOutAdapter extends RecyclerView.Adapter implements RecyclerVie
             @Override
             public void onFailure(Throwable t) {
                 System.out.println(t.getMessage());
+                removeLoading();
             }
         });
     }
@@ -130,14 +130,21 @@ public class CheckOutAdapter extends RecyclerView.Adapter implements RecyclerVie
             public void onClick(View v) {
 
                 final Snackbar snackbar = Snackbar
-                        .make(recyclerView, "Click YES for DELETE or wait UNDU", Snackbar.LENGTH_LONG);
+                        .make(recyclerView, "Click YES for DELETE or wait for UNDU", Snackbar.LENGTH_LONG);
 
                 snackbar.setAction("YES", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
                         int adapterPosition = cellViewHolder.getAdapterPosition();
+                        itemListener.recyclerViewListClickedLong(view, products.get(adapterPosition));
+
                         products.remove(adapterPosition);
                         notifyItemRangeRemoved(adapterPosition, 1);
+
+
+                        products.clear();
+                        loadMore();
                     }
                 });
 
@@ -166,12 +173,6 @@ public class CheckOutAdapter extends RecyclerView.Adapter implements RecyclerVie
     @Override
     public int getItemViewType(int position) {
         return products.get(position) != null ? VIEW_ITEM : VIEW_PROGRESS;
-    }
-
-    @Override
-    public void recyclerViewListClicked(View v, int position) {
-        Product product = products.get(position);
-        ProductDetailActivity.startProductDetailActivity(context, product);
     }
 
     public static class CellViewHolder extends RecyclerView.ViewHolder {

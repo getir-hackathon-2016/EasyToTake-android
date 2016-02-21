@@ -12,14 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.maps.android.clustering.ClusterManager;
 import com.easytotake.R;
 import com.easytotake.anim.CircleTransformation;
 import com.easytotake.map.MapItemRendered;
@@ -28,6 +20,14 @@ import com.easytotake.rest.RestClient;
 import com.easytotake.rest.model.Messenger;
 import com.easytotake.rest.util.Constants;
 import com.easytotake.util.Utils;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.maps.android.clustering.ClusterManager;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
 import com.nineoldandroids.view.ViewHelper;
@@ -59,6 +59,13 @@ public class MainActivity extends BaseDrawerActivity implements OnMapReadyCallba
     private ClusterManager<Messenger> mClusterManager;
     private List<Messenger> items;
     private Location location = null;
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getMarkers();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,6 +192,8 @@ public class MainActivity extends BaseDrawerActivity implements OnMapReadyCallba
                     TextView distance = (TextView) v.findViewById(R.id.distance);
                     distance.setText(messenger.getDistance());
 
+                    TextView status = (TextView) v.findViewById(R.id.status);
+                    status.setText(messenger.getStatus().equals("READY") ? "Ready For You" : "Sorry i am busy now");
 
                     return v;
 
@@ -198,6 +207,13 @@ public class MainActivity extends BaseDrawerActivity implements OnMapReadyCallba
     }
 
     private void getMarkers() {
+
+        if (mClusterManager==null){
+            return;
+        }
+
+        mClusterManager.clearItems();
+
         Call<List<Messenger>> call = RestClient.getService().messengers();
         call.enqueue(new AbstractCallback<List<Messenger>>() {
             @Override

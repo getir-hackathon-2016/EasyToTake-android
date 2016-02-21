@@ -11,6 +11,8 @@ public class Constants {
         public static final String PRODUCTS_TOP = "products/top";
         public static final String SHOPPING_CARD = "shoppingCard";
         public static final String UPDATE_SHOPPING_CARD = "updateshoppingcard";
+        public static final String REMOVE_FROM_SHOPPING_CARD = "romoveshoppingcard";
+        public static final String CHECK_OUT = "checkout";
 
         public static final String GET_SHOPPING_CARD_COUNT = "shoppingCard/count";
 
