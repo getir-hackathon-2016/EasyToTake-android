@@ -1,0 +1,72 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.easytotake">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <application
+        android:name=".EasyToTakeApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.easytotake.activity.SelectActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.easytotake.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.easytotake.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.easytotake.activity.SingUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.easytotake.activity.MapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransparentActivity.FullScreen" />
+
+        <activity
+            android:name="com.easytotake.activity.CheckOutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.easytotake.activity.CategoryDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.easytotake.activity.MessengerDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransparentActivity" />
+
+        <activity
+            android:name="com.easytotake.activity.ProductDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCUjMlljRxMW9t22nzJtt85uOvcfFyoCtA" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

@@ -1,0 +1,73 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/fab_color_pressed</item>
+    </style>
+
+    <style name="AppTheme.TransparentActivity">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppTheme.TransparentActivity.FullScreen">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="ContextMenuButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_context_menu</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Item" />
+
+    <style name="Item.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-thin</item>
+    </style>
+
+    <style name="Item.TextAppearance.Title">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="Item.TextAppearance.SubTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="Item.Toolbar">
+        <item name="android:minHeight">?attr/listPreferredItemHeight</item>
+        <item name="titleTextAppearance">@style/Item.TextAppearance.Title</item>
+        <item name="subtitleTextAppearance">@style/Item.TextAppearance.SubTitle</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="Item.TextAppearance.Marker" />
+
+    <style name="App" />
+
+    <style name="App.Toolbar">
+        <item name="android:id">@id/toolbar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="App.Toolbar.Transparent">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>

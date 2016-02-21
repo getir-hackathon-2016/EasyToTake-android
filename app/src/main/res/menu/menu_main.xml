@@ -1,0 +1,9 @@
+<!--menu_main.xml-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_basket"
+        android:icon="@drawable/ic_menu_notifications"
+        android:title="Basket"
+        app:showAsAction="always" />
+</menu>

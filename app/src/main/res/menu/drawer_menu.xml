@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/menu_group_1">
+        <item
+            android:id="@+id/menu_feed"
+            android:icon="@mipmap/ic_global_menu_likes"
+            android:title="Test Menu-1" />
+        <item
+            android:id="@+id/menu_direct"
+            android:icon="@mipmap/ic_global_menu_likes"
+            android:title="Test Menu-2" />
+        <item
+            android:id="@+id/menu_news"
+            android:icon="@mipmap/ic_global_menu_likes"
+            android:title="Test Menu-3" />
+        <item
+            android:id="@+id/menu_popular"
+            android:icon="@mipmap/ic_global_menu_likes"
+            android:title="Test Menu-4" />
+        <item
+            android:id="@+id/menu_photos_nearby"
+            android:icon="@mipmap/ic_global_menu_likes"
+            android:title="Test Menu-5" />
+        <item
+            android:id="@+id/menu_photo_you_liked"
+            android:icon="@mipmap/ic_global_menu_likes"
+            android:title="Test Menu-6" />
+    </group>
+    <group android:id="@+id/menu_group_2">
+        <item
+            android:id="@+id/menu_settings"
+            android:title="Settings" />
+        <item
+            android:id="@+id/menu_about"
+            android:title="About" />
+    </group>
+</menu>

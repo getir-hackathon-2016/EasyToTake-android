@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_context_menu"
+    android:clickable="true">
+
+    <LinearLayout
+        android:id="@+id/vGlobalMenuHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/picture"
+            android:layout_width="@dimen/global_menu_avatar_size"
+            android:layout_height="@dimen/global_menu_avatar_size"
+            android:layout_margin="12dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:text="Messegner Name"
+                android:textColor="@color/style_color_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:text="5₺"
+                android:textColor="@color/style_color_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Lore upsım lore upsom "
+                android:textColor="@color/style_color_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/removeFromShoppingCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"
+            android:background="@color/colorAccent"
+            android:src="@mipmap/ic_remove_shopping_cart_white_48dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="#dddddd" />
+</FrameLayout>

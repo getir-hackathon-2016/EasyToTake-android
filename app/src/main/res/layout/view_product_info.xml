@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="8dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<include layout="@layout/progress_item" />-->
+
+    <LinearLayout
+        android:id="@+id/infoContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:minHeight="72dp">
+
+            <ImageView
+                android:id="@+id/icon_energy"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="false"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="40dp"
+                android:maxHeight="48dp"
+                android:maxWidth="48dp"
+                android:src="@mipmap/ic_global_menu_likes" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/icon_energy"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="16dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Energy"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:text="39 kcal %2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="72dp"
+            android:background="#32000000" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:minHeight="72dp">
+
+            <ImageView
+                android:id="@+id/icon_sugar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="false"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="40dp"
+                android:maxHeight="48dp"
+                android:maxWidth="48dp"
+                android:src="@mipmap/ic_global_menu_likes" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/icon_sugar"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="16dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Sugar"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:text="9.8 g %11"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="72dp"
+            android:background="#32000000" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:minHeight="72dp">
+
+            <ImageView
+                android:id="@+id/icon_total_fat"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="false"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="40dp"
+                android:maxHeight="48dp"
+                android:maxWidth="48dp"
+                android:src="@mipmap/ic_global_menu_likes" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/icon_total_fat"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="16dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Total Fat"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:text="0 g %0"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="72dp"
+            android:background="#32000000" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:minHeight="72dp">
+
+            <ImageView
+                android:id="@+id/icon_sodium"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="false"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="40dp"
+                android:maxHeight="48dp"
+                android:maxWidth="48dp"
+                android:src="@mipmap/ic_global_menu_likes" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/icon_sodium"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="16dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="Sodium"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:text="0.1 g %4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="72dp"
+            android:background="#32000000" />
+
+
+    </LinearLayout>
+
+    <!--</LinearLayout>-->
+
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AspectLockedImageView">
+        <attr name="aspectRatio" format="float|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialCompoundButton">
+        <attr name="mcPadding" format="reference|dimension" />
+        <attr name="mcButton" format="color|reference" />
+        <attr name="mcText" format="string|reference" />
+        <attr name="mcTextSize" format="dimension|reference" />
+        <attr name="mcTextColor" format="reference" />
+        <attr name="mcChecked" format="boolean" />
+        <attr name="mcAnimator" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ShowHidePasswordEditText">
+        <attr name="drawable_hide" format="integer" />
+        <attr name="drawable_show" format="integer" />
+    </declare-styleable>
+
+
+</resources>

@@ -1,0 +1,157 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/singup_page"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Sing up to EasyToTake."
+                android:textSize="30dp" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:textSize="16sp"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="Full Name"
+                app:met_helperText="Hi.What is your name? "
+                app:met_iconPadding="0dp"
+                app:met_primaryColor="?colorAccent" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:textSize="16sp"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="Username"
+                app:met_helperText="Enter your unique name"
+                app:met_iconPadding="0dp"
+                app:met_primaryColor="?colorAccent" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="Email"
+                app:met_helperText="we will send an confirmation email"
+                app:met_primaryColor="?colorAccent" />
+
+            <com.easytotake.components.radiogroup.MaterialRadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.easytotake.components.radiogroup.MaterialRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:mcAnimator="true"
+                    app:mcButton="@drawable/radio_button_boy_selector"
+                    app:mcChecked="false"
+                    app:mcTextColor="@drawable/radio_button_text_selector"
+                    app:mcTextSize="6sp" />
+
+                <com.easytotake.components.radiogroup.MaterialRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    app:mcAnimator="true"
+                    app:mcButton="@drawable/radio_button_girl_selector"
+                    app:mcTextColor="@drawable/radio_button_text_selector"
+                    app:mcTextSize="6sp" />
+
+            </com.easytotake.components.radiogroup.MaterialRadioGroup>
+
+
+            <com.easytotake.components.edittext.showhidepassword.ShowHidePasswordEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textSize="16sp"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="Password"
+                app:met_helperText="Enter password"
+                app:met_iconPadding="0dp"
+                app:met_primaryColor="?colorAccent" />
+
+            <com.easytotake.components.edittext.showhidepassword.ShowHidePasswordEditText
+                android:id="@+id/rePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Re-Password"
+                android:textSize="16sp"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="Password"
+                app:met_helperText="Enter password"
+                app:met_iconPadding="0dp"
+                app:met_primaryColor="?colorAccent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="0.1"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_sing_up"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Sign up for EasyToTake"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
